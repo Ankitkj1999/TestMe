@@ -1,0 +1,37 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  //background-image: url("https://img.jakpost.net/c/2019/03/02/2019_03_02_66706_1551461528._large.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  color: #000;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  //background: grey;
+  padding: 0 40px;
+  height: 180px;
+  width: 70%;
+  overflow: hidden;
+  border-radius: 5%;
+  //border-style: solid;
+  border-color: gold;
+  border-width: 3px;
+  opacity: 0.7;
+}
+
+.qoute{
+  position: absolute;
+  left: 100px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  line-height: 60px;
+  visibility: hidden;
+}
