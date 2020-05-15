@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Level 1 | C</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    
+    <style>body, html {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      
+      .skill-card {
+        position: absolute;
+        margin: 5%;
+        top: 50%;
+        border-radius: 10px;
+        left: 50%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+                transform: translateY(-50%) translateX(-50%);
+        padding: 20px;
+        width: 350px;
+        background-color: #FFF;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        cursor: pointer;
+      }
+      .skill-card:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+      .skill-card:hover .skill-card__header {
+        height: 50px;
+      }
+      .skill-card:hover .skill-card__header .skill-card__icon {
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(3);
+                transform: translateX(-50%) translateY(-50%) scale(3);
+      }
+      .skill-card:hover .skill-card__body {
+        height: 250px;
+      }
+      .skill-card:hover .skill-card__body .skill-card__knowledge li {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        -webkit-transition-timing-function: cubic-bezier(0, 1.5, 1, 1);
+                transition-timing-function: cubic-bezier(0, 1.5, 1, 1);
+        -webkit-transition-duration: 0.5s;
+                transition-duration: 0.5s;
+      }
+      .skill-card:hover .skill-card__body .skill-card__knowledge li:nth-child(1) {
+        -webkit-transition-delay: 0.25s;
+                transition-delay: 0.25s;
+      }
+      .skill-card:hover .skill-card__body .skill-card__knowledge li:nth-child(2) {
+        -webkit-transition-delay: 0.5s;
+                transition-delay: 0.5s;
+      }
+      .skill-card:hover .skill-card__body .skill-card__knowledge li:nth-child(3) {
+        -webkit-transition-delay: 0.75s;
+                transition-delay: 0.75s;
+      }
+      .skill-card:hover .skill-card__body .skill-card__knowledge li:nth-child(4) {
+        -webkit-transition-delay: 1s;
+                transition-delay: 1s;
+      }
+      .skill-card:hover .skill-card__body .skill-card__knowledge li:nth-child(5) {
+        -webkit-transition-delay: 1.25s;
+                transition-delay: 1.25s;
+      }
+      .skill-card:hover .skill-card__body .skill-card__knowledge li:nth-child(6) {
+        -webkit-transition-delay: 1.5s;
+                transition-delay: 1.5s;
+      }
+      .skill-card .skill-card__header {
+        position: relative;
+        border-radius: 10px;
+        height: 250px;
+        margin: -20px -20px 20px -20px;
+        -webkit-transition: height 0.5s;
+        transition: height 0.5s;
+        overflow: hidden;
+      }
+      .skill-card .skill-card__header .skill-card__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+                transform: translateY(-50%) translateX(-50%);
+        display: block;
+        width: 128px;
+        height: 128px;
+        -webkit-transition: -webkit-transform 0.5s;
+        transition: -webkit-transform 0.5s;
+        transition: transform 0.5s;
+        transition: transform 0.5s, -webkit-transform 0.5s;
+      }
+      .skill-card .skill-card__body {
+        height: 40px;
+        -webkit-transition: height 0.5s;
+        transition: height 0.5s;
+        overflow: hidden;
+      }
+      .skill-card .skill-card__body .skill-card__title {
+        font-size: 1.4em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .skill-card .skill-card__body .skill-card__duration {
+        color: #9E9E9E;
+        font-style: italic;
+      }
+      .skill-card .skill-card__body .skill-card__knowledge {
+        margin-top: 10px;
+        color: #424242;
+      }
+      .skill-card .skill-card__body .skill-card__knowledge li {
+        margin-top: 5px;
+        -webkit-transition-duration: 0;
+                transition-duration: 0;
+        -webkit-transition-delay: 0.5s;
+                transition-delay: 0.5s;
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+      }
+      
+      </style>
+</head>
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="mosh-preloader"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area clearfix">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <!-- Menu Area Start -->
+                <div class="col-12 h-100">
+                    <div class="menu_area h-100">
+                        <nav class="navbar h-100 navbar-expand-lg align-items-center">
+                            <!-- Logo -->
+                          <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="logo"></a>  
+                            <!-- Menu Area -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mosh-navbar" aria-controls="mosh-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                            <div class="collapse navbar-collapse justify-content-end" id="mosh-navbar">
+                                <ul class="navbar-nav animated" id="nav">
+                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                </ul>
+                                <!-- Search Form Area Start -->
+                                <div class="search-form-area animated">
+                                    <form action="#" method="post">
+                                        <input type="search" name="search" id="search" placeholder="Type keywords &amp; hit enter">
+                                        <button type="submit" class="d-none"><img src="img/core-img/search-icon.png" alt="Search"></button>
+                                    </form>
+                                </div>
+                                <!-- Search btn -->
+                                <div class="search-button">
+                                    <a href="#" id="search-btn"><img src="img/core-img/search-icon.png" alt="Search"></a>
+                                </div>
+                                <!-- Login/Register btn -->
+                                <div class="login-register-btn">
+                                    <a href="login.html">Login</a>
+                                 <a style="color: white;">/</a>   <a href="sign-up.html"> Sign Up</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="mosh-breadcumb-area" style="background-image: url(img/core-img/breadcumb.png);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumbContent">
+                        <h2 >Level - 1</h2>
+
+                        <h5 style="margin-left:10px;">
+                            <a href="" style="color: rgb(253, 253, 253);" class="typewrite" data-period="2000" data-type='[ "Track Your Learning Through Test.", "Get Refrence To All The Resources At On Place.","Do Quick Revision.","Give Tests.", "Get To Your Goals Faster." ]'>
+                              <span class="wrap"></span>
+                            </a>
+                          </h5> 
+                           <nav aria-label="breadcrumb">
+                            <ol style="margin-left:10px;" class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Track Test</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Levels</li>
+                                <li class="breadcrumb-item active" aria-current="page">Level - 1</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section >
+        <div class="container" style="padding-top:12%;padding-bottom:15%;">
+            <div class="row ">
+                <div class="col">
+                    <!--empty-->
+                </div>
+                  <div class="col-4">
+               
+                        <div class="skill-card" style="margin-left: 5%;">
+                          <header class="skill-card__header" style="background-color: #eb6c3f"><img class="skill-card__icon" src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="HTML5 Logo"/></header>
+                          <section class="skill-card__body">
+                            <h2 class="skill-card__title">html</h2><span class="skill-card__duration">6 ans d'expérience</span>
+                            <ul class="skill-card__knowledge">
+                              <li>HTML5</li>
+                              <li>Sémantique</li>
+                              <li>SVG</li>
+                              <li>Canvas</li>
+                            </ul>
+                          </section>
+                        </div>
+                  </div>
+                  <div class="col-4">
+               
+                    <div class="skill-card">
+                      <header class="skill-card__header" style="background-color: #3f6deb;"><img class="skill-card__icon" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="HTML5 Logo"/></header>
+                      <section class="skill-card__body">
+                        <h2 class="skill-card__title">CSS</h2><span class="skill-card__duration">6 ans d'expérience</span>
+                        <ul class="skill-card__knowledge">
+                          <li>CSS5</li>
+                          <li>Sémantique</li>
+                          <li>SVG</li>
+                          <li>Canvas</li>
+                        </ul>
+                      </section>
+                    </div>
+              </div>
+              <div class="col">
+                <!--empty-->
+            </div>
+               </div> 
+
+               <div class="row" style="margin-top: 35%;">
+                <div class="col">
+                    <!--empty-->
+                </div>
+                  <div class="col-4">
+               
+                        <div class="skill-card">
+                          <header class="skill-card__header" style="background-color: #eb6c3f;"><img class="skill-card__icon" src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="HTML5 Logo"/></header>
+                          <section class="skill-card__body">
+                            <h2 class="skill-card__title">html</h2><span class="skill-card__duration">6 ans d'expérience</span>
+                            <ul class="skill-card__knowledge">
+                              <li>HTML5</li>
+                              <li>Sémantique</li>
+                              <li>SVG</li>
+                              <li>Canvas</li>
+                            </ul>
+                          </section>
+                        </div>
+                  </div>
+                  <div class="col-4">
+               
+                    <div class="skill-card">
+                        <header class="skill-card__header" style="background-color: #3f6deb;"><img class="skill-card__icon" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="HTML5 Logo"/></header>
+                        <section class="skill-card__body">
+                          <h2 class="skill-card__title">CSS</h2><span class="skill-card__duration">6 ans d'expérience</span>
+                          <ul class="skill-card__knowledge">
+                            <li>CSS5</li>
+                            <li>Sémantique</li>
+                            <li>SVG</li>
+                            <li>Canvas</li>
+                          </ul>
+                        </section>
+                      </div>
+              </div>
+              <div class="col">
+                <!--empty-->
+            </div>
+               </div> 
+              </div>
+             
+    </section>
+    
+
+   <!-- ***** Footer Area Start ***** -->
+   <footer class="footer-area clearfix">
+    <!-- Top Fotter Area -->
+    <div class="top-footer-area section_padding_100_0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <a href="#" class="mb-50 d-block"><img src="img/core-img/logo.png" alt=""></a>
+                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellent esque sit amet tellus blandit. Etiam nec odio vestibul.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5>Fast links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="services.html">Services &amp; Features</a></li>
+                            <li><a href="#">Accordions and tabs</a></li>
+                            <li><a href="#">Menu ideas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5>Blog</h5>
+                        <div class="footer-single--blog-post">
+                            <a href="blog.html" class="blog-post-date">
+                                <p>23 September, 2017</p>
+                            </a>
+                            <a href="blog.html" class="blog-post-title">
+                                <h6>To Do | Tracker</h6>
+                            </a>
+                        </div>
+                        <div class="footer-single--blog-post">
+                            <a href="#blog.html class="blog-post-date">
+                                <p>22 September, 2017</p>
+                            </a>
+                            <a href="blog.html" class="blog-post-title">
+                                <h6>Designin on grid. A few rules. </h6>
+                            </a>
+                        </div>
+                        <div class="footer-single--blog-post">
+                            <a href="blog.html" class="blog-post-date">
+                                <p>20 September, 2017</p>
+                            </a>
+                            <a href="blog.html" class="blog-post-title">
+                                <h6>2017 World Congress</h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5>Contact Info</h5>
+                        <div class="footer-single-contact-info d-flex">
+                            <div class="contact-icon">
+                                <img src="img/core-img/map.png" alt="">
+                            </div>
+                            <p>Chaukhandi, Tilak Nagar, New Delhi-110018 India </p>
+                        </div>
+                        <div class="footer-single-contact-info d-flex">
+                            <div class="contact-icon">
+                                <img src="img/core-img/call.png" alt="">
+                            </div>
+                            <p>Main: 203-808-8613 <br> Office: 203-808-8648</p>
+                        </div>
+                        <div class="footer-single-contact-info d-flex">
+                            <div class="contact-icon">
+                                <img src="img/core-img/message.png" alt="">
+                            </div>
+                            <p>office@yourbusiness.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fotter Bottom Area -->
+    <div class="footer-bottom-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <div class="footer-bottom-content h-100 d-md-flex justify-content-between align-items-center">
+                        <div class="copyright-text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                        <div class="footer-social-info">
+                            <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ***** Footer Area End ***** -->
+
+<!-- jQuery-2.2.4 js -->
+<script src="js/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
+
+<script>// INSERT JS HERE
+
+
+    // SOCIAL PANEL JS
+    const floating_btn = document.querySelector('.floating-btn');
+    const close_btn = document.querySelector('.close-btn');
+    const social_panel_container = document.querySelector('.social-panel-container');
+    
+    floating_btn.addEventListener('click', () => {
+        social_panel_container.classList.toggle('visible')
+    });
+    
+    close_btn.addEventListener('click', () => {
+        social_panel_container.classList.remove('visible')
+    });</script>
+</body>
+
+</html>

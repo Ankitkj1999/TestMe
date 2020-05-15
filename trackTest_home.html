@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Track Test | Home</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        .cards-list {
+            z-index: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: transparent;
+          }
+          
+          .card {
+            margin: 30px auto;
+            max-width: 500px;
+            
+            width:100%;
+        
+            height: 400px;
+            border-radius: 40px;
+          box-shadow: 5px 5px 30px 7px rgba(133, 133, 133, 0.25), -5px -5px 30px 7px rgba(129, 129, 129, 0.22);
+            cursor: pointer;
+            transition: 0.4s;
+            background-color: transparent;
+          }
+          
+          .card .card_image {
+            width: inherit;
+            height: inherit;
+            border-radius: 40px;
+            background-color: transparent;
+          }
+          
+          .card .card_image img {
+            width: inherit;
+            height: inherit;
+            border-radius: 40px;
+            object-fit: cover;
+            background-image:
+                      linear-gradient(
+                        55deg, 
+                        rgb(67, 70, 255), #0687f0 70%, rgb(0, 204, 255)
+                      );
+                      background-color: transparent;
+          }
+          
+          .card .card_title {
+            text-align: center;
+            border-radius: 0px 0px 20px 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            margin-top: -80px;
+            height: 40px;
+          }
+          
+          .card:hover {
+            transform: scale(0.9, 0.9);
+            box-shadow: 5px 5px 30px 15px rgba(134, 133, 133, 0.25), 
+              -5px -5px 30px 15px rgba(133, 132, 132, 0.22);
+          }
+          
+          .title-white {
+            color: white;
+          }
+          
+          .title-black {
+            color: black;
+          }
+          
+          @media all and (max-width: 500px) {
+            .card-list {
+              /* On small screens, we are no longer using row direction but column */
+              flex-direction: column;
+            }
+          }
+          
+          
+          /*
+          .card {
+            margin: 30px auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 40px;
+            background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-repeat: no-repeat;
+          box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+            transition: 0.4s;
+          }
+          */
+
+
+
+          *, *:before, *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            }
+          
+          
+           
+            
+          h6 {
+            display: inline-block;
+            color: white;
+            font-family: 'arial', serif;
+            font-size: 12em; 
+            text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+            }
+            h6:after {
+              content: attr(data-shadow);
+              position: absolute;
+              top: .06em; left: .06em;
+              z-index: -1;
+              text-shadow: none;
+              background-image:
+                linear-gradient(
+                  45deg,
+                  transparent 45%,
+                  hsla(48,20%,90%,1) 45%,
+                  hsla(48,20%,90%,1) 55%,
+                  transparent 0
+                  );
+  
+           
+            
+                 
+                  
+              background-size: .05em .05em;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            
+              animation: shad-anim 15s linear infinite;
+              }
+          
+          @keyframes shad-anim {
+            0% {background-position: 0 0}
+            0% {background-position: 100% -100%}
+            }
+        </style>
+</head>
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="mosh-preloader"></div>
+    </div>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area clearfix">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <!-- Menu Area Start -->
+                <div class="col-12 h-100">
+                    <div class="menu_area h-100">
+                        <nav class="navbar h-100 navbar-expand-lg align-items-center">
+                            <!-- Logo -->
+                          <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="logo"></a>  
+                            <!-- Menu Area -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mosh-navbar" aria-controls="mosh-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                            <div class="collapse navbar-collapse justify-content-end" id="mosh-navbar">
+                                <ul class="navbar-nav animated" id="nav">
+                                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                </ul>
+                                <!-- Search Form Area Start -->
+                                <div class="search-form-area animated">
+                                    <form action="#" method="post">
+                                        <input type="search" name="search" id="search" placeholder="Type keywords &amp; hit enter">
+                                        <button type="submit" class="d-none"><img src="img/core-img/search-icon.png" alt="Search"></button>
+                                    </form>
+                                </div>
+                                <!-- Search btn -->
+                                <div class="search-button">
+                                    <a href="#" id="search-btn"><img src="img/core-img/search-icon.png" alt="Search"></a>
+                                </div>
+                                <!-- Login/Register btn -->
+                                <div class="login-register-btn">
+                                    <a href="login.html">Login</a>
+                                 <a style="color: white;">/</a>   <a href="sign-up.html"> Sign Up</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="mosh-breadcumb-area" style="background-image: url(img/core-img/breadcumb.png);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumbContent">
+                        <h2 >Levels</h2>
+
+                        <h5 style="margin-left:10px;">
+                            <a href="" style="color: rgb(253, 253, 253);" class="typewrite" data-period="2000" data-type='[ "Track Your Learning Through Test.", "Get Refrence To All The Resources At On Place.","Do Quick Revision.","Give Tests.", "Get To Your Goals Faster." ]'>
+                              <span class="wrap"></span>
+                            </a>
+                          </h5> 
+                           <nav aria-label="breadcrumb">
+                            <ol style="margin-left:10px;" class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Track Test</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Levels</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+ <!--   <div class="container">
+    <div class="row">
+        <div class="col">
+        
+        </div>
+        <div class="col">
+            <h1 style=" background: -webkit-linear-gradient(rgb(37, 106, 255), rgb(20, 190, 241));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;font-size:8em" >Levels</h1>
+        </div>
+        <div class="col">
+      
+        </div>
+      </div>-->
+</section>
+
+    <section >
+        <div class="container" style="margin-bottom: 5%;">
+            <div class="row">
+                <div class="cards-list">
+              <div class="col">
+               
+                <div class="card 1">
+                    <div class="card_image"> <img /> </div>
+
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='1.'>1.</h6>
+                    </div>                  </div>
+                  
+
+              </div>
+              <div class="col">
+                
+                <div class="card 1">
+                    <div class="card_image"> <img  /> </div>
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='2.'>2.</h6>
+                    </div>                 
+                 </div>
+                  
+
+              </div>
+              </div>
+            </div>
+            
+        
+            <div class="row">
+                <div class="cards-list">
+              <div class="col">
+               
+                <div class="card 1">
+                    <div class="card_image"> <img  /> </div>
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='3.'>3.</h6>
+                    </div>
+                  </div>
+                  
+
+              </div>
+              <div class="col">
+                
+                <div class="card 1">
+                    <div class="card_image"> <img  /> </div>
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='4.'>4.</h6>
+                    </div>
+                  </div>
+                  
+
+              </div>
+              </div>
+            </div>
+            
+            <div class="row">
+                <div class="cards-list">
+              <div class="col">
+               
+                <div class="card 1">
+                    <div class="card_image"> <img /> </div>
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='5.'>5.</h6>
+                    </div>
+                  </div>
+                  
+
+              </div>
+              <div class="col">
+                
+                <div class="card 1">
+                    <div class="card_image"> <img  /> </div>
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='6.'>6.</h6>
+                    </div>
+                  </div>
+                  
+
+              </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="cards-list">
+              <div class="col">
+               
+                <div class="card 1">
+                    <div class="card_image"> <img  /> </div>
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='7.'>7.</h6>
+                    </div>
+                  </div>
+                  
+
+              </div>
+              <div class="col">
+                
+                <div class="card 1">
+                    <div class="card_image"> <img/> </div>
+                    <div class="card_title title-white">
+                        <h6 style="margin-top: -300px; z-index: 5;float:center" data-shadow='8.'>8.</h6>
+                    </div>
+                  </div>
+                  
+
+              </div>
+              </div>
+            </div>
+            
+        </div>
+    </section>
+
+   <!-- ***** Footer Area Start ***** -->
+   <footer class="footer-area clearfix">
+    <!-- Top Fotter Area -->
+    <div class="top-footer-area section_padding_100_0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <a href="#" class="mb-50 d-block"><img src="img/core-img/logo.png" alt=""></a>
+                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellent esque sit amet tellus blandit. Etiam nec odio vestibul.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5>Fast links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="services.html">Services &amp; Features</a></li>
+                            <li><a href="#">Accordions and tabs</a></li>
+                            <li><a href="#">Menu ideas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5>Blog</h5>
+                        <div class="footer-single--blog-post">
+                            <a href="blog.html" class="blog-post-date">
+                                <p>23 September, 2017</p>
+                            </a>
+                            <a href="blog.html" class="blog-post-title">
+                                <h6>To Do | Tracker</h6>
+                            </a>
+                        </div>
+                        <div class="footer-single--blog-post">
+                            <a href="#blog.html class="blog-post-date">
+                                <p>22 September, 2017</p>
+                            </a>
+                            <a href="blog.html" class="blog-post-title">
+                                <h6>Designin on grid. A few rules. </h6>
+                            </a>
+                        </div>
+                        <div class="footer-single--blog-post">
+                            <a href="blog.html" class="blog-post-date">
+                                <p>20 September, 2017</p>
+                            </a>
+                            <a href="blog.html" class="blog-post-title">
+                                <h6>2017 World Congress</h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-100">
+                        <h5>Contact Info</h5>
+                        <div class="footer-single-contact-info d-flex">
+                            <div class="contact-icon">
+                                <img src="img/core-img/map.png" alt="">
+                            </div>
+                            <p>Chaukhandi, Tilak Nagar, New Delhi-110018 India </p>
+                        </div>
+                        <div class="footer-single-contact-info d-flex">
+                            <div class="contact-icon">
+                                <img src="img/core-img/call.png" alt="">
+                            </div>
+                            <p>Main: 203-808-8613 <br> Office: 203-808-8648</p>
+                        </div>
+                        <div class="footer-single-contact-info d-flex">
+                            <div class="contact-icon">
+                                <img src="img/core-img/message.png" alt="">
+                            </div>
+                            <p>office@yourbusiness.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fotter Bottom Area -->
+    <div class="footer-bottom-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <div class="footer-bottom-content h-100 d-md-flex justify-content-between align-items-center">
+                        <div class="copyright-text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                        </div>
+                        <div class="footer-social-info">
+                            <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- ***** Footer Area End ***** -->
+
+<!-- jQuery-2.2.4 js -->
+<script src="js/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
+<script>var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+    }
+
+    setTimeout(function() {
+    that.tick();
+    }, delta);
+};
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i=0; i<elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
+};</script>
+</body>
+
+</html>
