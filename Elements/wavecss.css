@@ -1,0 +1,50 @@
+.box {
+    position: relative;
+
+    transform: rotate(-40deg);
+    
+
+}
+
+.wave {
+    position: absolute;
+    
+  opacity: .4;
+    
+  background:linear-gradient(to right,#489ac9 8%,#206bab 35%, #3f2274 100%);
+  width: 1500px;
+  height: 1300px;
+  margin-left: 400px;
+ 
+    margin-top: 150px;
+ 
+  border-radius: 43%;
+  
+}
+.wave.-one {
+animation: drift 7000ms infinite linear;
+    opacity: .2;
+    background-color: #0aff;
+}
+ 
+
+.wave.-three {
+  animation: drift 7500ms infinite linear;
+         opacity: .3;
+    background-color: #77daff;
+}
+
+.wave.-two {
+  animation: drift 5000ms infinite linear;
+  opacity: .1;
+  background: black;
+    
+}
+
+
+
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
